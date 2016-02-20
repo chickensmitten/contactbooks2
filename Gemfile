@@ -48,7 +48,7 @@ group :development, :test do
   gem 'capistrano-rails', '~> 1.1.0'
   gem 'capistrano-bundler'
   gem 'capistrano-rbenv', '~> 2.0'
-  gem 'capistrano-sidekiq'
+  gem 'capistrano-sidekiq', '~> 0.5.3'
   gem 'capistrano-cookbook', require: false
 end
 

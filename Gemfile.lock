@@ -184,7 +184,7 @@ DEPENDENCIES
   capistrano-cookbook
   capistrano-rails (~> 1.1.0)
   capistrano-rbenv (~> 2.0)
-  capistrano-sidekiq
+  capistrano-sidekiq (~> 0.5.3)
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
