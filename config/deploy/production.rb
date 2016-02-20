@@ -3,7 +3,7 @@
 set :stage, :production
 set :branch, "master"
 
-set :server_name, "www.example.com example.com"
+set :server_name, "54.191.145.241"
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 
 server '54.191.145.241', user: 'deploy', roles: %w{web app db}, primary: true
