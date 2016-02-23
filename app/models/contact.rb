@@ -3,6 +3,10 @@ class Contact < ActiveRecord::Base
     where("name @@ :q or address @@ :q", q: query)
   }
 
+  def self.test_cron_job
+    TestJob.perform_later
+  end
+
 end
 
 
