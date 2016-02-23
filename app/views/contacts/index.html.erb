@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <%= form_tag contacts_path, role: 'search', method: :get do |f| %>
-  <%= text_field_tag :q, params[:q] %>
+  <%= text_field_tag :query, params[:query] %>
   <%= button_tag "Search", name: nil %>
 <% end %>
 
