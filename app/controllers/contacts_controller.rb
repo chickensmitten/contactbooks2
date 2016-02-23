@@ -5,6 +5,7 @@ class ContactsController < ApplicationController
   # GET /contacts.json
   def index
     @contacts = Contact.full_text_search(params[:query])
+    @all = Contact.all
   end
 
   # GET /contacts/1
