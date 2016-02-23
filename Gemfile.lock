@@ -55,6 +55,8 @@ GEM
       sshkit (~> 1.2)
     capistrano-cookbook (0.2.1)
       capistrano (~> 3.2)
+    capistrano-faster-assets (1.0.2)
+      capistrano (>= 3.1)
     capistrano-rails (1.1.6)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
@@ -200,6 +202,7 @@ DEPENDENCIES
   capistrano (~> 3.2.1)
   capistrano-bundler
   capistrano-cookbook
+  capistrano-faster-assets (~> 1.0)
   capistrano-rails (~> 1.1.0)
   capistrano-rbenv (~> 2.0)
   capistrano-sidekiq (= 0.5.3)
