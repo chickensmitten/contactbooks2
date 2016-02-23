@@ -1,6 +1,6 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
-
+load 'deploy/assets'
 set :application, 'bendixon'
 set :deploy_user, 'deploy'
 set :scm, :git
