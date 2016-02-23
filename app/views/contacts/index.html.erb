@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<%= form_tag contacts_path, role: 'search', method: :get do |f| %>
+  <%= text_field_tag :q, params[:q] %>
+  <%= button_tag "Search", name: nil %>
+<% end %>
+
 <h1>Listing Contacts</h1>
 
 <table>
