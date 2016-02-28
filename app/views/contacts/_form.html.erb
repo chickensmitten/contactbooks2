@@ -31,6 +31,10 @@
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
+  <%= f.label :tag_list, 'Tags (separated with comas)' %>
+  <div class="col-md-12">
+    <%= f.autocomplete_field :tag_list, autocomplete_tag_name_contacts_path, :"data-delimiter" => ', ' %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

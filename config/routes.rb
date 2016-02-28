@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :contacts
+  resources :tags, except: :show
+  get 'tags/:tag', to: 'contacts#index'
+
+  resources :contacts do 
+    get :autocomplete_tag_name, :on => :collection
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

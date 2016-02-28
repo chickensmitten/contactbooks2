@@ -1,11 +1,16 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  autocomplete :tag, :name, :class_name => 'ActsAsTaggableOn::Tag'
 
   # GET /contacts
   # GET /contacts.json
   def index
-    @contacts = Contact.full_text_search(params[:query])
-    @all = Contact.all
+    @contacts = Contact.search(params[:query]).records
+    if params[:tag]
+      @all = Contact.tagged_with(params[:tag])
+    else
+      @all = Contact.all
+    end    
   end
 
   # GET /contacts/1
@@ -71,6 +76,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:name, :address, :city, :phone, :email)
+      params.require(:contact).permit(:name, :address, :city, :phone, :email, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
     end
 end

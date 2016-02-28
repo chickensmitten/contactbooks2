@@ -1,7 +1,8 @@
 class Contact < ActiveRecord::Base
-  scope :full_text_search, -> (query) {
-    where("name @@ :q or address @@ :q", q: query)
-  }
+  acts_as_taggable_on :tags
+  
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
 
   def self.test_cron_job
     TestJob.perform_later

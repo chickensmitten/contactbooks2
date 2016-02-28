@@ -37,9 +37,9 @@
           <td><%= contact.city %></td>
           <td><%= contact.phone %></td>
           <td><%= contact.email %></td>
-          <td><%= link_to 'Show', contact %></td>
+          <td><%= link_to 'Show', contact_path(contact) %></td>
           <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-          <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Destroy', contact_path(contact), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
@@ -69,6 +69,7 @@
           <td><%= contact.city %></td>
           <td><%= contact.phone %></td>
           <td><%= contact.email %></td>
+          <td><%= raw contact.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></td>
           <td><%= link_to 'Show', contact %></td>
           <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
           <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
